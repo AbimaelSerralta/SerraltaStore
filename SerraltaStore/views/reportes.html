@@ -1,0 +1,77 @@
+<div class="page-heading">
+    <div>
+        <h2>Reportes</h2>
+        <p class="muted">Resumen de ventas, ganancias, cobros, cuentas e inventario</p>
+    </div><button class="btn btn-light" id="report-current-month" type="button">Mes actual</button>
+</div>
+<div class="card report-period"><label>Desde <input id="report-from" type="date"></label><label>Hasta <input
+            id="report-to" type="date"></label></div>
+<div class="report-grid">
+    <article class="card"><span class="stat-label">Ventas del periodo</span><strong class="stat-value"
+            id="report-sales">$0.00</strong><span class="stat-hint" id="report-sales-count">0 ventas</span></article>
+    <article class="card"><span class="stat-label">Costo de productos vendidos (calculable)</span><strong
+            class="stat-value" id="report-cost">$0.00</strong></article>
+    <article class="card"><span class="stat-label">Ganancia bruta calculable</span><strong
+            class="stat-value amount-positive" id="report-profit">$0.00</strong><span class="stat-hint"
+            id="report-margin">Margen: 0%</span></article>
+    <article class="card"><span class="stat-label">Pagado en esas ventas</span><strong class="stat-value"
+            id="report-paid">$0.00</strong></article>
+    <article class="card"><span class="stat-label">Cobros recibidos en el periodo</span><strong class="stat-value"
+            id="report-payments">$0.00</strong></article>
+    <article class="card"><span class="stat-label">Por cobrar actualmente</span><strong class="stat-value"
+            id="report-receivable">$0.00</strong></article>
+    <article class="card"><span class="stat-label">Saldo a favor de clientes</span><strong class="stat-value"
+            id="report-credit">$0.00</strong></article>
+</div>
+<div class="card" id="report-profit-note" hidden></div>
+<div class="card">
+    <h3>Ganancia por venta</h3>
+    <p class="muted">El cálculo considera el costo de compra guardado al momento de cada venta.</p>
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Venta</th>
+                    <th>Fecha</th>
+                    <th>Importe vendido</th>
+                    <th>Costo</th>
+                    <th>Ganancia bruta</th>
+                </tr>
+            </thead>
+            <tbody id="report-sales-profit"></tbody>
+        </table>
+    </div>
+</div>
+<div class="card">
+    <h3>Ganancia por producto</h3>
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Unidades vendidas</th>
+                    <th>Importe vendido</th>
+                    <th>Costo</th>
+                    <th>Ganancia bruta</th>
+                </tr>
+            </thead>
+            <tbody id="report-products"></tbody>
+        </table>
+    </div>
+</div>
+<div class="card">
+    <h3>Existencias actuales</h3>
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Stock actual</th>
+                    <th>Stock mínimo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="report-stock"></tbody>
+        </table>
+    </div>
+</div>

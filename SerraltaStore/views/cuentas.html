@@ -1,0 +1,98 @@
+<section id="accounts-list-screen">
+    <div class="page-heading">
+        <div>
+            <h2>Cuentas</h2>
+            <p class="muted">Consulta las deudas y saldos a favor de tus clientes</p>
+        </div>
+    </div>
+    <div class="account-summary-grid">
+        <article class="card"><span class="stat-label">Total por cobrar</span><strong class="stat-value"
+                id="accounts-receivable">$0.00</strong></article>
+        <article class="card"><span class="stat-label">Total saldo a favor</span><strong class="stat-value"
+                id="accounts-credit">$0.00</strong></article>
+    </div>
+    <div class="card">
+        <div class="account-toolbar"><input id="account-search" class="search-input"
+                placeholder="Buscar cliente..."><select id="account-filter" class="search-input">
+                <option value="todos">Todos</option>
+                <option value="deuda">Con deuda</option>
+                <option value="favor">Con saldo a favor</option>
+                <option value="sin">Sin saldo</option>
+            </select></div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Departamento</th>
+                        <th>Por cobrar</th>
+                        <th>Saldo a favor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="account-list"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="account-detail-screen" hidden>
+    <div class="page-heading">
+        <div>
+            <h2 id="account-detail-name">Estado de cuenta</h2>
+            <p class="muted">Movimientos y saldos del cliente</p>
+        </div><button class="btn btn-light" id="account-back">← Regresar</button>
+    </div>
+    <div class="account-summary-grid">
+        <article class="card"><span class="stat-label">Deuda pendiente</span><strong class="stat-value"
+                id="detail-debt">$0.00</strong></article>
+        <article class="card"><span class="stat-label">Saldo a favor</span><strong class="stat-value"
+                id="detail-credit">$0.00</strong></article>
+    </div>
+    <div class="page-heading">
+        <h3>Compras y movimientos</h3><button class="btn btn-primary" id="account-new-payment">＋ Registrar pago /
+            abono</button>
+    </div>
+    <div class="card">
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Movimiento</th>
+                        <th>Folio</th>
+                        <th>Total</th>
+                        <th>Saldo pendiente</th>
+                    </tr>
+                </thead>
+                <tbody id="account-movements"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="account-payment-screen" hidden>
+    <div class="page-heading">
+        <div>
+            <h2>Registrar pago / abono</h2>
+            <p class="muted" id="payment-customer-name"></p>
+        </div><button class="btn btn-light" id="payment-cancel">← Cancelar</button>
+    </div>
+    <div class="card">
+        <form id="account-payment-form" class="account-payment-form">
+            <div class="field"><label>Importe recibido</label><input id="payment-amount" name="amount" type="number"
+                    min="0.01" step="0.01" required></div>
+            <div class="field"><label>Forma de pago</label><select id="payment-method" name="method">
+                    <option>Efectivo</option>
+                    <option>Transferencia</option>
+                    <option>Otro</option>
+                </select></div>
+            <div class="field"><label>Observaciones</label><input name="notes" maxlength="250" placeholder="Opcional">
+            </div>
+            <div class="payment-preview"><strong>Aplicación del pago</strong>
+                <p id="payment-preview-text" class="muted">Ingresa un importe para ver cómo se aplicará.</p>
+            </div>
+            <div class="actions"><button type="button" class="btn btn-light"
+                    id="payment-cancel-bottom">Cancelar</button><button class="btn btn-primary">Confirmar pago</button>
+            </div>
+        </form>
+    </div>
+</section>

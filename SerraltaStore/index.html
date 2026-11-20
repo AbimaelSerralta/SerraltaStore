@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2563EB">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="SerraltaStore">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+  <title>SerraltaStore</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="css/productos.css">
+  <link rel="stylesheet" href="css/inventario.css">
+  <link rel="stylesheet" href="css/clientes.css">
+  <link rel="stylesheet" href="css/ventas.css">
+  <link rel="stylesheet" href="css/cuentas.css">
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">S</span>SerraltaStore</div>
+
+      <nav class="side-nav" aria-label="Navegación principal">
+        <button data-view="inicio" class="active"><span class="nav-icon nav-icon-home">⌂</span><span
+            class="nav-label">Inicio</span></button>
+        <button data-view="productos"><span class="nav-icon nav-icon-products">▦</span><span
+            class="nav-label">Productos</span></button>
+        <button data-view="inventario"><span class="nav-icon nav-icon-inventory">⇅</span><span
+            class="nav-label">Inventario</span></button>
+        <button data-view="clientes"><span class="nav-icon nav-icon-customers">♙</span><span
+            class="nav-label">Clientes</span></button>
+        <button data-view="ventas" class="nav-sale"><span class="nav-icon nav-icon-sale">＋</span><span
+            class="nav-label">Venta</span></button>
+        <button data-view="cuentas"><span class="nav-icon nav-icon-accounts">＄</span><span
+            class="nav-label">Cuentas</span></button>
+        <button data-view="historial"><span class="nav-icon nav-icon-history">◷</span><span
+            class="nav-label">Historial</span></button>
+        <button data-view="reportes"><span class="nav-icon nav-icon-reports">▤</span><span
+            class="nav-label">Reportes</span></button>
+        <button data-view="respaldos"><span class="nav-icon nav-icon-backups">⇧</span><span
+            class="nav-label">Respaldos</span></button>
+        <button type="button" class="nav-menu-toggle" data-menu-toggle aria-expanded="false"
+          aria-controls="mobile-menu">
+          <span class="nav-icon nav-icon-menu">☰</span><span class="nav-label">Menú</span>
+        </button>
+      </nav>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <div class="mobile-menu-heading">Más opciones</div>
+        <button data-view="inventario"><span class="menu-item-icon">⇅</span>Inventario</button>
+        <button data-view="clientes"><span class="menu-item-icon">♙</span>Clientes</button>
+        <button data-view="historial"><span class="menu-item-icon">◷</span>Historial</button>
+        <button data-view="reportes"><span class="menu-item-icon">▤</span>Reportes</button>
+        <button data-view="respaldos"><span class="menu-item-icon">⇧</span>Respaldos</button>
+      </div>
+
+      <div class="sidebar-foot">Administración de tienda</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div><span class="eyebrow">PANEL DE CONTROL</span>
+          <h1 id="page-title">Inicio</h1>
+        </div>
+        <span id="today-label"></span>
+      </header>
+      <div id="backup-reminder" class="backup-reminder" role="status" hidden>
+        <div><strong>Es momento de respaldar tu información.</strong><span>Han pasado 7 días desde el último respaldo
+            generado.</span></div>
+        <button type="button" class="btn btn-primary" data-view="respaldos">Crear respaldo</button>
+      </div>
+      <section id="app-view" class="page-content"></section>
+    </main>
+  </div>
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

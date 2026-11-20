@@ -1,0 +1,44 @@
+<div class="page-heading">
+    <div>
+        <h2>Nueva venta</h2>
+        <p class="muted">Selecciona un cliente y agrega los productos</p>
+    </div>
+</div>
+<form id="sale-form">
+    <div class="sale-layout">
+        <div>
+            <div class="card grid">
+                <div class="field"><label>Cliente</label><select id="sale-customer">
+                        <option value="">Venta mostrador</option>
+                    </select></div>
+                <div class="field"><label>Producto</label>
+                    <div class="actions"><select id="sale-product" style="flex:1">
+                            <option value="">Selecciona un producto</option>
+                        </select><button type="button" id="add-line" class="btn btn-light">Agregar producto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Productos de la venta</h3>
+                <div id="sale-lines">
+                    <p class="empty">Agrega productos a la venta</p>
+                </div>
+            </div>
+        </div>
+        <aside class="card summary">
+            <h3>Resumen</h3>
+            <div class="muted">Total de la venta</div>
+            <p class="total" id="sale-total">$0.00</p>
+            <div class="field"><label>Tipo de pago (automático)</label><select id="payment-type" disabled>
+                    <option value="paid">Pago completo</option>
+                    <option value="partial">Pago parcial</option>
+                    <option value="credit">Fiado</option>
+                </select></div>
+            <div class="field" style="margin-top:14px"><label>Efectivo recibido</label><input id="paid-amount"
+                    type="number" min="0" step=".01" value="0"><small class="muted">Se considera también el saldo a
+                    favor del cliente y primero se cubren sus deudas anteriores.</small></div>
+            <p id="sale-payment-preview" class="muted" aria-live="polite">Agrega productos para calcular el pago.</p>
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:18px">Registrar venta</button>
+        </aside>
+    </div>
+</form>

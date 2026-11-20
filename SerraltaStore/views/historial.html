@@ -1,0 +1,36 @@
+<div class="page-heading">
+    <div>
+        <h2>Historial</h2>
+        <p class="muted">Consulta las ventas, abonos y movimientos de inventario</p>
+    </div>
+    <div class="history-count card"><span class="stat-label">Movimientos registrados</span><strong class="stat-value"
+            id="history-count">0</strong></div>
+</div>
+<div class="card">
+    <div class="history-filters"><input id="history-search" class="search-input"
+            placeholder="Buscar por operación, cliente o producto"><select id="history-filter" class="search-input">
+            <option value="todos">Todos los movimientos</option>
+            <option value="venta">Ventas</option>
+            <option value="abono">Abonos recibidos</option>
+            <option value="inventario">Inventario</option>
+            <option value="pago">Pagos de venta</option>
+        </select><label>Desde <input id="history-from" type="date"></label><label>Hasta <input id="history-to"
+                type="date"></label><button id="history-clear" class="btn btn-light" type="button">Limpiar</button>
+    </div>
+    <p class="muted history-result">Mostrando <strong id="history-visible">0</strong> movimientos</p>
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Operación</th>
+                    <th>Cliente / detalle</th>
+                    <th>Importe</th>
+                    <th>Estado / cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="history-list"></tbody>
+        </table>
+    </div>
+</div>

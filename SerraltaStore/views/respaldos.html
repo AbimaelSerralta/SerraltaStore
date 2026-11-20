@@ -1,0 +1,39 @@
+<div class="page-heading">
+  <div>
+    <h2>Respaldos</h2>
+    <p class="muted">Protege tu información y restáurala cuando lo necesites.</p>
+  </div>
+</div>
+<div class="notice backup-reminder-note"><strong>Respaldo semanal:</strong> SerraltaStore te avisará al abrir la
+  aplicación cuando hayan pasado 7 días desde el último respaldo generado. El aviso no se ejecuta en segundo plano si la
+  aplicación está cerrada.</div>
+<div class="backup-last"><strong>Último respaldo generado:</strong> <span id="backup-last-date">Consultando...</span>
+</div>
+<div class="backup-grid">
+  <section class="card backup-card">
+    <div class="backup-icon">↓</div>
+    <h3>Exportar respaldo</h3>
+    <p class="muted">Descarga un archivo JSON con tus productos, clientes, ventas, pagos, cuentas y movimientos.</p>
+    <button id="backup-export" class="btn btn-primary" type="button">Exportar respaldo</button>
+    <button id="backup-confirm" class="btn btn-light" type="button" disabled>Ya guardé el archivo</button>
+  </section>
+  <section class="card backup-card">
+    <div class="backup-icon">↑</div>
+    <h3>Importar respaldo</h3>
+    <p class="muted">Restaura la información desde un respaldo JSON creado por SerraltaStore. Reemplazará los datos
+      actuales.</p>
+    <input id="backup-file" type="file" accept=".json,application/json" hidden>
+    <button id="backup-import" class="btn btn-light" type="button">Seleccionar respaldo</button>
+  </section>
+  <section class="card backup-card backup-danger-card">
+    <div class="backup-icon backup-danger-icon">!</div>
+    <h3>Limpiar base de datos</h3>
+    <p class="muted">Elimina todos los registros guardados localmente en este dispositivo. Úsalo únicamente para pruebas
+      o cuando realmente quieras comenzar desde cero.</p>
+    <button id="backup-clear" class="btn btn-danger" type="button">Limpiar base de datos</button>
+  </section>
+</div>
+<div class="notice backup-warning"><strong>Importante:</strong> los datos se almacenan en este navegador y dispositivo.
+  Guarda los archivos de respaldo en Archivos o iCloud Drive. No elimines los datos de Safari ni desinstales la PWA sin
+  tener una copia.</div>
+<p id="backup-status" class="backup-status" role="status" aria-live="polite"></p>
