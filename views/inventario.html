@@ -1,0 +1,34 @@
+<div class="page-heading">
+    <div>
+        <h2>Inventario</h2>
+        <p class="muted">Entradas y salidas de productos</p>
+    </div>
+</div>
+<div class="card">
+    <form id="movement-form" class="form-grid">
+        <div class="field"><label>Producto</label><select id="movement-product" name="productId"></select></div>
+        <div class="field"><label>Movimiento</label><select name="type">
+                <option value="entrada">Entrada</option>
+                <option value="salida">Salida</option>
+            </select></div>
+        <div class="field"><label>Cantidad</label><input name="quantity" type="number" min="1" step="1" required></div>
+        <div class="field"><label>Nota</label><input name="note"></div>
+        <div><button class="btn btn-primary">Registrar movimiento</button></div>
+    </form>
+</div>
+<div class="card">
+    <h3>Movimientos recientes</h3>
+    <div class="table-wrap">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Tipo</th>
+                    <th>Cantidad</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody id="movement-list"></tbody>
+        </table>
+    </div>
+</div>

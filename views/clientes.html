@@ -1,0 +1,46 @@
+<section id="customer-list-screen">
+    <div class="page-heading">
+        <div>
+            <h2>Clientes</h2>
+            <p class="muted">Administra la información de tus clientes</p>
+        </div><button class="btn btn-primary" id="new-customer">＋ Nuevo cliente</button>
+    </div>
+    <div class="grid stats-grid">
+        <div class="card">
+            <div class="stat-label">Total de clientes</div>
+            <div class="stat-value" id="customer-count">0</div>
+        </div>
+    </div>
+    <div class="card"><input id="customer-search" class="search-input"
+            placeholder="Buscar por nombre, departamento o celular">
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Celular</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="customer-list"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="customer-form-screen" hidden>
+    <div class="page-heading">
+        <div>
+            <h2 id="customer-form-title">Nuevo cliente</h2>
+            <p class="muted">Información de contacto</p>
+        </div><button id="customer-back" class="btn btn-light">← Regresar</button>
+    </div>
+    <div class="card">
+        <form id="customer-form" class="form-grid"><input type="hidden" name="id">
+            <div class="field"><label>Nombre completo</label><input name="name" required maxlength="120"></div>
+            <div class="field"><label>Departamento</label><input name="department" maxlength="80"></div>
+            <div class="field"><label>Número de celular</label><input name="phone" type="tel" maxlength="20"></div>
+            <div class="field" style="align-self:end"><button class="btn btn-primary">Guardar cliente</button></div>
+        </form>
+    </div>
+</section>
