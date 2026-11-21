@@ -1165,3 +1165,53 @@ h1 {
     margin: 0 0 16px;
   }
 }
+
+/* Mejoras de búsqueda y selector de cantidades en Nueva venta */
+#sale-customer-search,
+#sale-product-search {
+  width: 100%;
+}
+
+.quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  background: #F9FAFB;
+  color: #1F2937;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.quantity-btn:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+.quantity-value {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 650;
+}
+
+#account-opening-screen .account-payment-form {
+  max-width: 620px;
+}
+
+@media(max-width:620px) {
+  .quantity-control {
+    gap: 7px;
+  }
+
+  .quantity-btn {
+    width: 38px;
+    height: 38px;
+  }
+}

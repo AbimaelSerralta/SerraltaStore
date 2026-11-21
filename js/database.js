@@ -291,3 +291,32 @@ export async function registerCustomerPayment({ customerId, amount, method, note
         tx.onabort = () => { if (!settled) { settled = true; reject(tx.error || new Error("El registro del abono fue cancelado.")); } };
     });
 }
+
+
+// Registra un saldo inicial a favor sin generar una venta ficticia.
+export async function registerOpeningCredit({ customerId, amount, notes = "" }) {
+    const db = await openDatabase();
+    const value = Number(amount);
+    if (customerId === undefined || customerId === null || String(customerId).trim() === "") throw new Error("Selecciona un cliente.");
+    if (!Number.isFinite(value) || value <= 0) throw new Error("El saldo inicial debe ser mayor que cero.");
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction(["customers", "payments", "accountEntries"], "readwrite");
+        const customers = tx.objectStore("customers");
+        const request = customers.get(Number(customerId));
+        let result = null, settled = false;
+        request.onsuccess = () => {
+            const customer = request.result;
+            if (!customer) { try { tx.abort(); } catch (_) { } return; }
+            const now = new Date().toISOString();
+            const nextCredit = Number((Number(customer.creditBalance || 0) + value).toFixed(2));
+            customers.put({ ...customer, creditBalance: nextCredit });
+            const movement = { customerId: Number(customerId), amount: value, creditAmount: value, creditApplied: 0, method: "Saldo inicial", notes, type: "saldo-inicial", applications: [], createdAt: now };
+            tx.objectStore("payments").add(movement);
+            tx.objectStore("accountEntries").add(movement);
+            result = { creditBalance: nextCredit };
+        };
+        request.onerror = () => { try { tx.abort(); } catch (_) { } };
+        tx.oncomplete = () => { if (!settled) { settled = true; resolve(result); } };
+        tx.onerror = tx.onabort = () => { if (!settled) { settled = true; reject(tx.error || new Error("No se pudo registrar el saldo inicial.")); } };
+    });
+}
