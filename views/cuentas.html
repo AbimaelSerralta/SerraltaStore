@@ -49,10 +49,7 @@
                 id="detail-credit">$0.00</strong></article>
     </div>
     <div class="page-heading">
-        <h3>Compras y movimientos</h3>
-        <div class="actions"><button class="btn btn-light" id="account-opening-credit">＋ Saldo inicial a
-                favor</button><button class="btn btn-primary" id="account-new-payment">＋ Registrar pago / abono</button>
-        </div>
+        <h3>Compras y movimientos</h3><div class="actions"><button class="btn btn-light" id="account-opening-credit">＋ Saldo inicial a favor</button><button class="btn btn-primary" id="account-new-payment">＋ Registrar pago / abono</button></div>
     </div>
     <div class="card">
         <div class="table-wrap">
@@ -73,22 +70,15 @@
 </section>
 <section id="account-opening-screen" hidden>
     <div class="page-heading">
-        <div>
-            <h2>Registrar saldo inicial</h2>
-            <p class="muted" id="opening-customer-name"></p>
-        </div>
+        <div><h2>Registrar saldo inicial</h2><p class="muted" id="opening-customer-name"></p></div>
         <button class="btn btn-light" id="opening-cancel">← Cancelar</button>
     </div>
     <div class="card">
         <form id="opening-credit-form" class="account-payment-form">
-            <div class="field"><label>Saldo inicial a favor</label><input id="opening-credit-amount" type="number"
-                    min="0.01" step="0.01" required placeholder="0.00"></div>
-            <div class="field"><label>Observaciones</label><input id="opening-credit-notes" maxlength="250"
-                    placeholder="Ej. Saldo migrado de sistema anterior"></div>
+            <div class="field"><label>Saldo inicial a favor</label><input id="opening-credit-amount" type="number" min="0.01" step="0.01" required placeholder="0.00"></div>
+            <div class="field"><label>Observaciones</label><input id="opening-credit-notes" maxlength="250" placeholder="Ej. Saldo migrado de sistema anterior"></div>
             <p class="muted">Este movimiento registra un saldo a favor sin crear una venta ficticia.</p>
-            <div class="actions"><button type="button" class="btn btn-light"
-                    id="opening-cancel-bottom">Cancelar</button><button class="btn btn-primary" type="submit">Guardar
-                    saldo inicial</button></div>
+            <div class="actions"><button type="button" class="btn btn-light" id="opening-cancel-bottom">Cancelar</button><button class="btn btn-primary" type="submit">Guardar saldo inicial</button></div>
         </form>
     </div>
 </section>

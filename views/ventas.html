@@ -8,18 +8,24 @@
     <div class="sale-layout">
         <div>
             <div class="card grid">
-                <div class="field"><label>Buscar cliente</label><input id="sale-customer-search" type="search"
-                        placeholder="Escribe el nombre o departamento..."></div>
-                <div class="field"><label>Cliente</label><select id="sale-customer">
-                        <option value="">Venta mostrador</option>
-                    </select></div>
-                <div class="field"><label>Buscar producto</label><input id="sale-product-search" type="search"
-                        placeholder="Escribe el nombre del producto..."></div>
-                <div class="field"><label>Producto</label>
-                    <div class="actions"><select id="sale-product" style="flex:1">
-                            <option value="">Selecciona un producto</option>
-                        </select><button type="button" id="add-line" class="btn btn-light">Agregar producto</button>
+                <div class="field">
+                    <label for="sale-customer-search">Cliente</label>
+                    <div class="autocomplete" data-autocomplete="customer">
+                        <input id="sale-customer-search" type="search" placeholder="Escribe el nombre del cliente..." autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sale-customer-options">
+                        <div id="sale-customer-options" class="autocomplete-options" role="listbox" hidden></div>
                     </div>
+                    <input id="sale-customer" type="hidden" value="">
+                </div>
+                <div class="field">
+                    <label for="sale-product-search">Producto</label>
+                    <div class="actions autocomplete-product-row">
+                        <div class="autocomplete" data-autocomplete="product">
+                            <input id="sale-product-search" type="search" placeholder="Escribe el nombre del producto..." autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sale-product-options">
+                            <div id="sale-product-options" class="autocomplete-options" role="listbox" hidden></div>
+                        </div>
+                        <button type="button" id="add-line" class="btn btn-light">Agregar producto</button>
+                    </div>
+                    <input id="sale-product" type="hidden" value="">
                 </div>
             </div>
             <div class="card">

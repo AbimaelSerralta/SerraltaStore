@@ -1,0 +1,16 @@
+<div class="page-heading">
+    <div>
+        <h2>Notificaciones</h2>
+        <p class="muted">Prepara las listas de saldos pendientes por departamento para compartirlas.</p>
+    </div>
+    <button type="button" id="notifications-copy-all" class="btn btn-primary">Copiar todo</button>
+</div>
+<div class="notification-summary card">
+    <div><span class="stat-label">Clientes con saldo pendiente</span><strong class="stat-value"
+            id="notification-customer-count">0</strong></div>
+    <div><span class="stat-label">Saldo pendiente total</span><strong class="stat-value"
+            id="notification-total">$0.00</strong></div>
+</div>
+<div id="notification-groups" class="notification-groups"></div>
+<p id="notification-empty" class="card empty" hidden>No hay clientes con saldo pendiente para notificar.</p>
+<div id="notification-status" class="notification-status" role="status" aria-live="polite"></div>

@@ -1090,7 +1090,8 @@ h1 {
   .side-nav button[data-view="clientes"],
   .side-nav button[data-view="historial"],
   .side-nav button[data-view="reportes"],
-  .side-nav button[data-view="respaldos"] {
+  .side-nav button[data-view="respaldos"],
+  .side-nav button[data-view="notificaciones"] {
     display: none;
   }
 
@@ -1167,51 +1168,32 @@ h1 {
 }
 
 /* Mejoras de búsqueda y selector de cantidades en Nueva venta */
-#sale-customer-search,
-#sale-product-search {
-  width: 100%;
-}
+#sale-customer-search, #sale-product-search { width: 100%; }
+.quantity-control { display: inline-flex; align-items: center; gap: 10px; }
+.quantity-btn { width: 34px; height: 34px; border: 1px solid #D1D5DB; border-radius: 8px; background: #F9FAFB; color: #1F2937; font-size: 20px; line-height: 1; cursor: pointer; }
+.quantity-btn:disabled { opacity: .4; cursor: not-allowed; }
+.quantity-value { min-width: 20px; text-align: center; font-weight: 650; }
+#account-opening-screen .account-payment-form { max-width: 620px; }
+@media(max-width:620px) { .quantity-control { gap: 7px; } .quantity-btn { width: 38px; height: 38px; } }
 
-.quantity-control {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.quantity-btn {
-  width: 34px;
-  height: 34px;
-  border: 1px solid #D1D5DB;
-  border-radius: 8px;
-  background: #F9FAFB;
-  color: #1F2937;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.quantity-btn:disabled {
-  opacity: .4;
-  cursor: not-allowed;
-}
-
-.quantity-value {
-  min-width: 20px;
-  text-align: center;
-  font-weight: 650;
-}
-
-#account-opening-screen .account-payment-form {
-  max-width: 620px;
-}
-
+/* Autocomplete de clientes y productos en Nueva venta */
+.autocomplete { position: relative; width: 100%; min-width: 0; }
+.autocomplete-options { position: absolute; z-index: 30; top: calc(100% + 5px); left: 0; right: 0; max-height: 260px; overflow-y: auto; border: 1px solid #D1D5DB; border-radius: 10px; background: #fff; box-shadow: 0 10px 25px rgba(15, 23, 42, .14); }
+.autocomplete-options[hidden] { display: none !important; }
+.autocomplete-option { display: flex; width: 100%; flex-direction: column; align-items: flex-start; gap: 3px; padding: 11px 13px; border: 0; border-bottom: 1px solid #F1F5F9; background: #fff; color: #1F2937; text-align: left; cursor: pointer; }
+.autocomplete-option:last-child { border-bottom: 0; }
+.autocomplete-option:hover, .autocomplete-option:focus { background: #EFF6FF; outline: none; }
+.autocomplete-option small { color: #6B7280; font-size: 12px; }
+.autocomplete-empty { padding: 14px; color: #6B7280; }
+.autocomplete-product-row > .autocomplete { flex: 1; }
+.inventory-list-heading { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+.inventory-list-heading h3 { margin: 0; }
+.inventory-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.inventory-filters .search-input { max-width: none; }
 @media(max-width:620px) {
-  .quantity-control {
-    gap: 7px;
-  }
-
-  .quantity-btn {
-    width: 38px;
-    height: 38px;
-  }
+  input, select, textarea { font-size: 16px !important; }
+  .autocomplete-product-row { align-items: stretch; flex-direction: column; }
+  .autocomplete-product-row .btn { width: 100%; }
+  .inventory-filters { grid-template-columns: 1fr; }
 }

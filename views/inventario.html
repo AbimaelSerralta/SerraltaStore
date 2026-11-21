@@ -17,7 +17,13 @@
     </form>
 </div>
 <div class="card">
-    <h3>Movimientos recientes</h3>
+    <div class="inventory-list-heading">
+        <h3>Movimientos recientes</h3>
+        <div class="inventory-filters">
+            <div class="field"><label for="inventory-filter-product">Producto</label><select id="inventory-filter-product" class="search-input"><option value="todos">Todos los productos</option></select></div>
+            <div class="field"><label for="inventory-filter-type">Tipo</label><select id="inventory-filter-type" class="search-input"><option value="todos">Todos los tipos</option><option value="entrada">Entrada</option><option value="salida">Salida</option></select></div>
+        </div>
+    </div>
     <div class="table-wrap">
         <table class="data-table">
             <thead>

@@ -1,14 +1,14 @@
-const CACHE_NAME = "serraltastore-shell-v9";
+const CACHE_NAME = "serraltastore-shell-v10";
 const APP_FILES = [
   "./", "./index.html", "./manifest.json",
   "./css/base.css", "./css/inicio.css", "./css/productos.css",
-  "./css/inventario.css", "./css/clientes.css", "./css/ventas.css", "./css/cuentas.css",
+  "./css/inventario.css", "./css/clientes.css", "./css/ventas.css", "./css/cuentas.css", "./css/notificaciones.css",
   "./js/app.js", "./js/database.js", "./js/inicio.js", "./js/productos.js",
   "./js/inventario.js", "./js/clientes.js", "./js/ventas.js", "./js/cuentas.js",
-  "./js/historial.js", "./js/reportes.js", "./js/respaldos.js",
+  "./js/historial.js", "./js/reportes.js", "./js/respaldos.js", "./js/notificaciones.js",
   "./views/inicio.html", "./views/productos.html", "./views/producto-form.html",
   "./views/inventario.html", "./views/clientes.html", "./views/ventas.html",
-  "./views/cuentas.html", "./views/historial.html", "./views/reportes.html", "./views/respaldos.html",
+  "./views/cuentas.html", "./views/historial.html", "./views/reportes.html", "./views/respaldos.html", "./views/notificaciones.html",
   "./img/icon-180.png", "./img/icon-192.png", "./img/icon-512.png"
 ];
 

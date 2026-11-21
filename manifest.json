@@ -1,7 +1,7 @@
 {
   "name": "SerraltaStore",
   "short_name": "SerraltaStore",
-  "description": "Administración de productos, inventario, clientes y ventas.",
+  "description": "Administración de productos, inventario, clientes, ventas, cuentas y notificaciones.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

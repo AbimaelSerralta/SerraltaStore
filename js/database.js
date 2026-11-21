@@ -306,7 +306,7 @@ export async function registerOpeningCredit({ customerId, amount, notes = "" }) 
         let result = null, settled = false;
         request.onsuccess = () => {
             const customer = request.result;
-            if (!customer) { try { tx.abort(); } catch (_) { } return; }
+            if (!customer) { try { tx.abort(); } catch (_) {} return; }
             const now = new Date().toISOString();
             const nextCredit = Number((Number(customer.creditBalance || 0) + value).toFixed(2));
             customers.put({ ...customer, creditBalance: nextCredit });
@@ -315,7 +315,7 @@ export async function registerOpeningCredit({ customerId, amount, notes = "" }) 
             tx.objectStore("accountEntries").add(movement);
             result = { creditBalance: nextCredit };
         };
-        request.onerror = () => { try { tx.abort(); } catch (_) { } };
+        request.onerror = () => { try { tx.abort(); } catch (_) {} };
         tx.oncomplete = () => { if (!settled) { settled = true; resolve(result); } };
         tx.onerror = tx.onabort = () => { if (!settled) { settled = true; reject(tx.error || new Error("No se pudo registrar el saldo inicial.")); } };
     });

@@ -3,15 +3,15 @@ import { openDatabase } from "./database.js";
 const titles = {
   inicio: "Inicio", productos: "Productos", inventario: "Inventario",
   clientes: "Clientes", ventas: "Nueva venta", cuentas: "Cuentas",
-  historial: "Historial", reportes: "Reportes", respaldos: "Respaldos"
+  historial: "Historial", reportes: "Reportes", respaldos: "Respaldos", notificaciones: "Notificaciones"
 };
 const view = document.querySelector("#app-view");
 const modules = {
   inicio: "inicio", productos: "productos", inventario: "inventario",
   clientes: "clientes", ventas: "ventas", cuentas: "cuentas",
-  historial: "historial", reportes: "reportes", respaldos: "respaldos"
+  historial: "historial", reportes: "reportes", respaldos: "respaldos", notificaciones: "notificaciones"
 };
-const menuViews = ["inventario", "clientes", "historial", "reportes", "respaldos"];
+const menuViews = ["inventario", "clientes", "historial", "reportes", "respaldos", "notificaciones"];
 const mobileMenu = document.querySelector("#mobile-menu");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const reminder = document.querySelector("#backup-reminder");
